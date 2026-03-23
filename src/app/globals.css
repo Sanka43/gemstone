@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #111111;
+  --gold: #c6a25b;
+  --gold-muted: #8f7744;
+  --ink: #0f0f10;
+  --surface: #f8f6f1;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+a,
+button {
+  transition: all 180ms ease;
+}
+
+.luxury-container {
+  @apply mx-auto w-full max-w-7xl px-4 md:px-8;
+}
+
+.section-title {
+  @apply font-serif text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl;
+}
+
+.section-subtitle {
+  @apply mt-4 max-w-2xl text-zinc-600;
+}
