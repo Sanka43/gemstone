@@ -19,7 +19,10 @@ export const loganSapphireSriLanka =
 export const rubyCorundumCrystal =
   "https://upload.wikimedia.org/wikipedia/commons/5/54/%E0%AE%B0%E0%AF%82%E0%AE%AA%E0%AF%80.jpg";
 
-export const whatsappNumber = "94771234567";
+/** Digits only (country + local) for https://wa.me/ */
+export const whatsappNumber = "94726010150";
+/** Same line shown for phone and WhatsApp in the UI */
+export const contactPhoneDisplay = "+94 72 601 0150";
 
 export const gemstones: Gemstone[] = [
   {

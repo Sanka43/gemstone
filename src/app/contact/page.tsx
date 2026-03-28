@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { whatsappNumber } from "@/lib/gems";
+import { contactPhoneDisplay, whatsappNumber } from "@/lib/gems";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -23,7 +23,7 @@ export default function ContactPage() {
           className="flex min-h-[4.5rem] flex-col justify-center rounded-2xl border border-[#8f7744]/40 bg-[#c6a25b]/10 p-5 transition hover:border-[#8f7744] hover:bg-[#c6a25b]/20 active:scale-[0.99]"
         >
           <span className="text-sm font-semibold text-[#5c4a22]">WhatsApp</span>
-          <span className="mt-1 text-base text-zinc-800">+94 77 123 4567</span>
+          <span className="mt-1 text-base text-zinc-800">{contactPhoneDisplay}</span>
           <span className="mt-2 text-xs text-zinc-600">Tap to open chat</span>
         </a>
         <a

@@ -1,3 +1,5 @@
+import { contactPhoneDisplay, whatsappNumber } from "@/lib/gems";
+
 export function Footer() {
   return (
     <footer
@@ -16,8 +18,11 @@ export function Footer() {
           <h4 className="text-sm font-semibold uppercase tracking-wide text-zinc-900">Contact</h4>
           <ul className="mt-3 space-y-2 text-sm text-zinc-600">
             <li>
-              <a href="tel:+94771234567" className="inline-flex min-h-11 items-center text-zinc-700 underline-offset-2 hover:text-zinc-950 hover:underline">
-                +94 77 123 4567
+              <a
+                href={`tel:+${whatsappNumber}`}
+                className="inline-flex min-h-11 items-center text-zinc-700 underline-offset-2 hover:text-zinc-950 hover:underline"
+              >
+                {contactPhoneDisplay}
               </a>
             </li>
             <li>
