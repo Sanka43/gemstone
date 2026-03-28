@@ -7,13 +7,14 @@
   --gold-muted: #8f7744;
   --ink: #0f0f10;
   --surface: #f8f6f1;
+  --tap-min: 44px;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, "Times New Roman", serif;
 }
 
 * {
@@ -23,22 +24,53 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-tap-highlight-color: rgb(198 162 91 / 0.15);
 }
 
 a,
 button {
-  transition: all 180ms ease;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease,
+    transform 180ms ease, box-shadow 180ms ease;
 }
 
 .luxury-container {
-  @apply mx-auto w-full max-w-7xl px-4 md:px-8;
+  @apply mx-auto w-full max-w-7xl;
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+@media (min-width: 640px) {
+  .luxury-container {
+    padding-left: max(1.25rem, env(safe-area-inset-left));
+    padding-right: max(1.25rem, env(safe-area-inset-right));
+  }
+}
+
+@media (min-width: 768px) {
+  .luxury-container {
+    padding-left: max(2rem, env(safe-area-inset-left));
+    padding-right: max(2rem, env(safe-area-inset-right));
+  }
 }
 
 .section-title {
-  @apply font-serif text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl;
+  @apply font-serif text-[1.65rem] font-semibold leading-tight tracking-tight text-zinc-950 sm:text-3xl md:text-4xl;
 }
 
 .section-subtitle {
-  @apply mt-4 max-w-2xl text-zinc-600;
+  @apply mt-3 max-w-2xl text-base leading-relaxed text-zinc-600 sm:mt-4;
+}
+
+/* Comfortable reading width on phones */
+.prose-mobile {
+  @apply text-[0.9375rem] leading-relaxed sm:text-base;
+}
+
+/* Home hero — background URL must match kandyLooseGems in src/lib/gems.ts */
+.home-hero-gem {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.52)),
+    url("https://upload.wikimedia.org/wikipedia/commons/e/eb/Sri_Lanka-Pr%C3%A9sentation_de_pierres_pr%C3%A9cieuses.jpg");
+  background-size: cover;
+  background-position: center;
 }
